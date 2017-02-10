@@ -1,0 +1,14 @@
+<h1>City of <%= @city %>, <%= @state %></h1>
+
+<h2>Current Temperature: <%= @temp %>&deg</h1>
+
+<h2>5 Day Forecast:</h2>
+<% @week_forecast.each do |forecast| %>
+  <h2><%= forecast["day"] %></h2>
+  <h3>High: <%= forecast["high"] %>&deg</h3>
+  <h3>Low: <%= forecast["low"] %>&deg</h3>
+  <h3>Forecast: <%= forecast["text"] %></h3>
+<% end %>
+
+<%= form_tag "/forecasts", method:  :post %>
+
